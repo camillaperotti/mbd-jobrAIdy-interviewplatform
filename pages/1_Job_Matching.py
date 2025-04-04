@@ -58,6 +58,8 @@ st.title("🎯 Job Matching and Screening")
 # Get jobs and build selectbox
 df_jobs = jobs_instance.get_jobs_df()
 
+selected_job = None  # Initialize safely
+
 if df_jobs.empty:
     st.warning("⚠️ No jobs found. Please check your API credentials or connection.")
 else:
