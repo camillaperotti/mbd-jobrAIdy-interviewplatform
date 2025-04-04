@@ -11,7 +11,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 #Gemini imports
 import google.generativeai as genai
-genai.configure(api_key="AIzaSyCpzF8uPc_Y0HWOBPfhaQNXKApKI2va1gc")
+genai.configure(api_key="AIzaSyA5I9zdE44pHsp33RlkiKbrKQJapqosmX0")
 
 
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -30,7 +30,7 @@ if "llm" not in st.session_state:
     st.session_state.llm = ChatGoogleGenerativeAI(
         model="models/gemini-1.5-pro-002",
         temperature=0.3,
-        google_api_key="AIzaSyCpzF8uPc_Y0HWOBPfhaQNXKApKI2va1gc"  # 🔐 Your API key
+        google_api_key="AIzaSyA5I9zdE44pHsp33RlkiKbrKQJapqosmX0"  # 🔐 Your API key
     )
 
 llm = st.session_state.llm
