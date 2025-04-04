@@ -11,7 +11,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 #Gemini imports
 import google.generativeai as genai
-genai.configure(api_key="AIzaSyDwao9o8O9moUGK-0bLfNdpifF1mwvs3E4")
+genai.configure(api_key="AIzaSyCDE34VRUqbhfCLDeyYVi8zYLNpl_IBe3M")
 
 
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -22,7 +22,7 @@ from classes import Jobs, Candidate, CandidateResultsManager, CVMatcher, Candida
 llm = ChatGoogleGenerativeAI(
     model="models/gemini-1.5-pro-002",
     temperature=0.3,
-    google_api_key="AIzaSyDwao9o8O9moUGK-0bLfNdpifF1mwvs3E4"  # 🔑 explicitly pass the key here
+    google_api_key="AIzaSyCDE34VRUqbhfCLDeyYVi8zYLNpl_IBe3M"  # 🔑 explicitly pass the key here
 )
 matcher = CVMatcher(llm)
 
