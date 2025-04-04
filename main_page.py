@@ -13,7 +13,7 @@ def main():
     col_logo, col_text = st.columns([1, 3])
 
     with col_logo:
-        logo_path = os.path.join(os.path.dirname(_file_), "logo.jpg")
+        logo_path = os.path.join(os.path.dirname(__file__), "logo.jpg")
         if os.path.exists(logo_path):
             st.image(logo_path, width=150)
         else:
