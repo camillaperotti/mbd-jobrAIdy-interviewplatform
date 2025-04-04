@@ -19,13 +19,22 @@ from langchain.prompts import PromptTemplate
 from classes import Jobs, Candidate, CandidateResultsManager, CVMatcher, CandidateEvaluator
 
 
-llm = ChatGoogleGenerativeAI(
-    model="models/gemini-1.5-pro-002",
-    temperature=0.3,
-    google_api_key="AIzaSyCDE34VRUqbhfCLDeyYVi8zYLNpl_IBe3M"  # 🔑 explicitly pass the key here
-)
-matcher = CVMatcher(llm)
+#llm = ChatGoogleGenerativeAI(
+#    model="models/gemini-1.5-pro-002",
+#    temperature=0.3,
+#    google_api_key="AIzaSyCDE34VRUqbhfCLDeyYVi8zYLNpl_IBe3M"  # 🔑 explicitly pass the key here
+#)
+#matcher = CVMatcher(llm)
+# 
+if "llm" not in st.session_state:
+    st.session_state.llm = ChatGoogleGenerativeAI(
+        model="models/gemini-1.5-pro-002",
+        temperature=0.3,
+        google_api_key="AIzaSyCDE34VRUqbhfCLDeyYVi8zYLNpl_IBe3M"  # 🔐 Your API key
+    )
 
+llm = st.session_state.llm
+matcher = CVMatcher(llm)
 
 # --- SESSION STATE INIT ---
 if "results_manager" not in st.session_state:
